@@ -1,0 +1,113 @@
+.box {
+    border: 3px solid #00b7ef;
+    max-width: 800px;
+    margin: 10px;
+}
+
+.title {
+    font-family: 'Anton', sans-serif;
+    font-size: 30px;
+    color: #00b7ef;
+    margin-left: 6px;
+}
+
+.text {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #c1bfc0;
+    margin-left: 6px;
+}
+
+.date {
+    font-family: 'Poiret One', sans-serif;
+    font-size: 16px;
+    color: black;
+    padding : 0px 5px;
+    width = 110px;
+}
+
+.author {
+    font-family: 'Pinyon Script', sans-serif;
+    font-size: 24px;
+    color: black;
+    text-align: center;
+    padding-right: 40px;
+}
+
+.site_title {
+    font-family: 'Anton', sans-serif;
+    font-size: 40px;
+    color: black;
+    text-align: center;
+    margin-left: 10px;
+}
+legend {
+    width: 110px;
+}
+
+fieldset {
+  padding: 1em;
+  font:80%/1 sans-serif;
+ }
+
+ .my_form {
+    border: 3px dashed #00b7ef;
+    max-width: 800px;
+    margin: 10px;
+ }
+
+ #input_message {
+    height: 100px;
+    width: 100%;
+ }
+
+ #input_title {
+    width: 150px;
+ }
+
+ #input_author {
+    width: 128px;
+ }
+
+ input {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+ }
+
+ .send_form {
+    background-color: #66CDAA;
+    font-size: 16px;
+ }
+
+ .close_form {
+    background-color: red;
+    font-size: 16px;
+ }
+
+ .show_form {
+    background-color: #66CDAA;
+    font-size: 16px;
+ }
+
+ i{
+    color: white;
+ }
+
+ .btn {
+    width: 80px;
+    margin: 4px;
+ }
+
+ .my_buttons {
+    max-width: 800px;
+    margin: 10px;
+    border: 1px dashed black;
+    text-align: center;
+    radius: 3px;
+
+ }
+
+ .empty {
+    text-align:center;
+ }

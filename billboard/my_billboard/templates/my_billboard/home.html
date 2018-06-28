@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Anton|Pinyon+Script|Poiret+One" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'CSS/billboard.css' %}">
+</head>
+<body>
+    <h1 class="site_title">BILLBOARD</h1>
+
+    {% if not all_boards %}
+    <div class="empty">
+        <p>No messages...</p>
+        <p>Click the '+' button to add a new message</p>
+    </div>
+    {% endif %}
+
+
+    {% for board in all_boards%}
+    <fieldset class="mx-auto box">
+
+        <legend class="date">{{board.date_added}}</legend>
+        <h1 class="title">{{board.title}}</h1>
+        <p class="text">{{board.text}}</p>
+        <p class="author col-3 offset-10">{{board.author}}</p>
+    </fieldset>
+    {% endfor %}
+
+    <div id="my_form">
+        <form method='POST' action=''>
+            {% csrf_token %}
+            <fieldset class="mx-auto my_form">
+                <legend class="date">{{date_added}}</legend>
+                <input id="input_title" type='text' name='q1' value='{{ request.get.q1 }}' placeholder='Title' />
+            <input id="input_message" type='text' name='q2' value='{{ request.get.q2 }}' placeholder='Your message here' />
+            <input class="col-3 offset-10" id="input_author" type='text' name='q3' value='{{ request.get.q3 }}' placeholder='Author' />
+
+            </fieldset>
+            <div class="mx-auto my_buttons">
+                <button class="btn close_form"><i class="fas fa-times"></i></button>
+                <button class="btn send_form" type='submit' value='Search'><i class="fas fa-check"></i></button>
+            </div>
+        </form>
+    </div>
+
+
+     <div id="show_buttons" class="mx-auto my_buttons">
+                <button class="btn show_form"><i class="fas fa-plus"></i></button>
+     </div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="{% static 'JS/billboard.js' %}"></script>
+</body>
+</html>
